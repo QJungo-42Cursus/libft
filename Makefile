@@ -1,7 +1,6 @@
 CC =		gcc
 CFLAGS =	-Wall -Wextra -Werror
 RM =		 rm -f
-
 SRCS =			ft_split.c \
 				ft_calloc.c \
 				ft_itoa.c \
@@ -48,42 +47,34 @@ SRCS_BONUS =	ft_lstnew.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
-
 				is_in_charset_bonus.c \
 				ft_char_to_str_bonus.c \
  				ft_strlen_until_bonus.c \
 				ft_itoa_base_bonus.c \
-				ft_color_bonus.c \
 				ft_utoa_bonus.c \
 				ft_strrev_bonus.c
 
-OBJS =			${SRCS:.c=.o}
-OBJS_BONUS =	${SRCS_BONUS:.c=.o}
+OBJS =			$(SRCS:.c=.o)
+OBJS_BONUS =	$(SRCS_BONUS:.c=.o)
 NAME =     		libft.a
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-all: ${NAME}
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
-${NAME}: ${OBJS}
-	ar -rcs ${NAME} ${OBJS}
+all: $(NAME)
 
-bonus: ${OBJS} ${OBJS_BONUS}
-	ar -rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
-	${RM} ${OBJS} ${OBJS_BONUS}
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
-testc:
-	${RM} test
-test: ${NAME} testc
-	${CC} ${CFLAGS} main.c -L. -lft -o test
-	./test

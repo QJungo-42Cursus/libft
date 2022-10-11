@@ -15,10 +15,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define INT_MIN -2147483648
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
 
 typedef struct s_list {
-	void			content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 
@@ -29,6 +31,7 @@ enum e_bool {
 	ERROR = 1,
 };
 
+/*
 enum e_color {
 	BLUE,
 	RED,
@@ -41,12 +44,13 @@ enum e_color {
 	BOLD,
 	STD,
 };
+*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_strrev(char *string);
 char	*ft_itoa_base(unsigned long long int n,
 			char *base, unsigned int n_base);
-void	ft_color(int color, int font);
+//void	ft_color(int color, int font);
 char	*ft_utoa(unsigned int n);
 char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t nmem, size_t size);
@@ -72,7 +76,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_is_in_charset(char c, const char *charset);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_strlen_until(const char *string, const char *charset);
-void	ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 void	*ft_realloc(void *ptr, size_t size);
 char	*ft_char_to_str(char c);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -99,3 +103,39 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 #endif
+
+/* enum e_color {
+	BLUE,
+	RED,
+	YELLOW,
+	PURPLE,
+	GREEN,
+	CYAN,
+	WHITE,
+	RESET,
+	BOLD,
+	STD,
+};
+
+void	ft_color(int color, int font)
+{
+	if (color == RESET)
+		printf("\033[0m");
+	if (color == RED)
+		printf("\033[0;31m");
+	if (color == GREEN)
+		printf("\033[0;32m");
+	if (color == YELLOW)
+		printf("\033[0;33m");
+	if (color == BLUE)
+		printf("\033[0;34m");
+	if (color == PURPLE)
+		printf("\033[0;35m");
+	if (color == CYAN)
+		printf("\033[0;36m");
+	if (color == WHITE)
+		printf("\033[0;37m");
+	if (font == BOLD)
+		printf("\033[1m");
+}
+*/
