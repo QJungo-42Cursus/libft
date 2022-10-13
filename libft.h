@@ -57,7 +57,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_realloc(void *ptr, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t count);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_toupper(int c);
@@ -88,6 +87,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 // int		ft_strlen_until(const char *string, const char *charset);
 // char	*ft_char_to_str(char c);
 // int		ft_is_in_charset(char c, const char *charset);
+// void	*ft_memccpy(void *dest, const void *src, int c, size_t count);
 #endif
 
 /* enum e_color {

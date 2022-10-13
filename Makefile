@@ -25,7 +25,6 @@ SRCS =			ft_split.c \
 				ft_bzero.c \
 				ft_putnbr_fd.c \
 				ft_memcpy.c \
-				ft_memccpy.c \
 				ft_memcmp.c \
 				ft_memchr.c \
 				ft_memset.c \
@@ -53,6 +52,7 @@ SRCS_BONUS =	ft_lstnew.c \
 # ft_itoa_base_bonus.c \
 # ft_utoa_bonus.c \
 # ft_strrev_bonus.c
+# ft_memccpy.c \
 
 OBJS =			$(SRCS:.c=.o)
 OBJS_BONUS =	$(SRCS_BONUS:.c=.o)
@@ -79,9 +79,9 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-testc:
-	${RM} test
+# testc:
+# 	${RM} test
 
-test: ${NAME} testc
-	${CC} ${CFLAGS} main.c -L. -lft -o test
-	./test
+# test: ${NAME} testc
+# 	${CC} ${CFLAGS} main.c -L. -lft -o test
+# 	./test
