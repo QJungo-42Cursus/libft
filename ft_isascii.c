@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 // Officiel : #define __isascii(_Char) ((unsigned)(_Char) < 0x80)
 int	ft_isascii(int c)
 {

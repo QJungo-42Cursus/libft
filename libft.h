@@ -31,27 +31,7 @@ enum e_bool {
 	ERROR = 1,
 };
 
-/*
-enum e_color {
-	BLUE,
-	RED,
-	YELLOW,
-	PURPLE,
-	GREEN,
-	CYAN,
-	WHITE,
-	RESET,
-	BOLD,
-	STD,
-};
-*/
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_strrev(char *string);
-char	*ft_itoa_base(unsigned long long int n,
-			char *base, unsigned int n_base);
-//void	ft_color(int color, int font);
-char	*ft_utoa(unsigned int n);
 char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t nmem, size_t size);
 char	*ft_itoa(int n);
@@ -73,12 +53,9 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *string);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
-int		ft_is_in_charset(char c, const char *charset);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-int		ft_strlen_until(const char *string, const char *charset);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_realloc(void *ptr, size_t size);
-char	*ft_char_to_str(char c);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t count);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
@@ -91,7 +68,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strrchr(char *str, int c);
 char	*ft_strchr(char *str, int c);
 
-/// Bonus
+/// Bonus officiels
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -102,6 +79,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
+/// Non official bonus
+//void	ft_color(int color, int font);
+// void	ft_strrev(char *string);
+// char	*ft_utoa(unsigned int n);
+// char	*ft_itoa_base(unsigned long long int n,
+// 			char *base, unsigned int n_base);
+// int		ft_strlen_until(const char *string, const char *charset);
+// char	*ft_char_to_str(char c);
+// int		ft_is_in_charset(char c, const char *charset);
 #endif
 
 /* enum e_color {

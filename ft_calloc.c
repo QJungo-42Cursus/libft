@@ -10,17 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "limits.h"
-// TODO : pas sur que ca compile avec la moulinette...
-//		le test du gars avec size max fait crash, comment gerer, en sachant
-//		que le size max change partout...
+// #ifndef SIZE_MAX
+// # ifdef __SIZE_MAX__
+// #  define SIZE_MAX __SIZE_MAX__
+// # endif
+// #endif
+#include <unistd.h>
+#include <stdlib.h>
 
-#ifndef SIZE_MAX
-# ifdef __SIZE_MAX__
-#  define SIZE_MAX __SIZE_MAX__
-# endif
-#endif
+static void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*v;
+	size_t			i;
+
+	v = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		v[i++] = (unsigned char)c;
+	}
+	return ((void *)v);
+}
 
 void	*ft_calloc(size_t nmem, size_t size)
 {
@@ -31,6 +41,6 @@ void	*ft_calloc(size_t nmem, size_t size)
 	res = malloc(nmem * size);
 	if (res == NULL)
 		return (NULL);
-	ft_bzero(res, (nmem * size));
+	ft_memset(res, 0, (nmem * size));
 	return (res);
 }

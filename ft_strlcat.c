@@ -29,7 +29,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + j] = '\0';
 	return (ft_strlen(src) + i);
 }
-
 /*
 The strlcat() function appends the NUL-terminated string src to the end of dst. 
 It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
