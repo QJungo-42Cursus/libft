@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:22:48 by qjungo            #+#    #+#             */
-/*   Updated: 2022/07/11 21:22:48 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/18 09:16:24 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,15 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 /// Non official bonus
-//void	ft_color(int color, int font);
-// void	ft_strrev(char *string);
-// char	*ft_utoa(unsigned int n);
-// char	*ft_itoa_base(unsigned long long int n,
-// 			char *base, unsigned int n_base);
-// int		ft_strlen_until(const char *string, const char *charset);
-// char	*ft_char_to_str(char c);
-// int		ft_is_in_charset(char c, const char *charset);
-// void	*ft_memccpy(void *dest, const void *src, int c, size_t count);
+void	strrev(char *string);
+char	*utoa(unsigned int n);
+char	*itoa_base(unsigned long long int n, char *base, unsigned int n_base);
+int		strlen_until(const char *string, const char *charset);
+char	*char_to_str(char c);
+int		is_in_charset(char c, const char *charset);
 #endif
 
+// void	color(int color, int font);
 /* enum e_color {
 	BLUE,
 	RED,

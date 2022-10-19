@@ -45,14 +45,13 @@ SRCS_BONUS =	ft_lstnew.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
-				ft_lstmap.c
-# is_in_charset_bonus.c \
-# ft_char_to_str_bonus.c \
-# ft_strlen_until_bonus.c \
-# ft_itoa_base_bonus.c \
-# ft_utoa_bonus.c \
-# ft_strrev_bonus.c
-# ft_memccpy.c \
+				ft_lstmap.c \
+				is_in_charset_bonus.c \
+				char_to_str_bonus.c \
+				strlen_until_bonus.c \
+				itoa_base_bonus.c \
+				utoa_bonus.c \
+				strrev_bonus.c \
 
 OBJS =			$(SRCS:.c=.o)
 OBJS_BONUS =	$(SRCS_BONUS:.c=.o)

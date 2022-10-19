@@ -6,101 +6,73 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:52:33 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/13 10:04:06 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/18 09:11:22 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_char_to_str(char c)
+typedef struct s_word {
+	int	pos;
+	int	len;
+}	t_word;
+
+void	*free_all(char ***res)
 {
-	char	*res;
-
-	res = malloc(2);
-	res[0] = c;
-	res[1] = 0;
-	return (res);
-}
-
-// TODO : turn public for ft_printf
-//  bonus !
-static char	*ft_strjoin_free(char *s1, char s2)
-{
-	char			*res;
-	char			*s2_c;
-
-	s2_c = ft_char_to_str(s2);
-	res = ft_strjoin(s1, s2_c);
-	free(s1);
-	free(s2_c);
-	return (res);
-}
-
-// TODO : turn public for ft_printf
-//  bonus !
-static int	count_words(char const *s, char c)
-{
-	int		i;
-	int		new_word;
-	int		word_count;
+	int	i;
 
 	i = 0;
-	new_word = 1;
-	word_count = 0;
-	while (s[i])
+	while ((*res)[i] != NULL)
 	{
-		if (s[i] == c)
-			new_word = 1;
-		else if (new_word && s[i] != c)
-		{
-			new_word = 0;
-			word_count++;
-		}
+		free((*res)[i]);
 		i++;
 	}
-	return (word_count);
+	free(*res);
+	return (NULL);
 }
 
-typedef struct s_bordel {
-	char	**res;
-	int		i;
-	int		new_word;
-	int		word_count;
-	int		n_word;
-}	t_bordel;
-
-static int	init_res(char const *s, char c, int *n_word, char ***res)
+int	index_words(char const *s, char c, t_word *words)
 {
-	*n_word = count_words(s, c);
-	*res = ft_calloc((*n_word) + 1, sizeof(char *));
-	if (*res == NULL)
-		return (1);
-	return (0);
+	int	i_char;
+	int	i_word;
+
+	i_char = 0;
+	i_word = 0;
+	while (s[i_char] != '\0')
+	{
+		if (s[i_char] == c)
+			i_char++;
+		else if (s[i_char] != c)
+		{
+			words[i_word].pos = i_char;
+			while (s[i_char] != c && s[i_char] != '\0')
+				i_char++;
+			words[i_word].len = i_char - words[i_word].pos;
+			i_word++;
+		}
+	}
+	return (i_word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	t_bordel	d;
+	t_word	words[2048];
+	int		n_word;
+	int		i_word;
+	char	**res;
 
-	d.i = 0;
-	d.new_word = 1;
-	d.word_count = -1;
-	if (init_res(s, c, &d.n_word, &d.res))
+	n_word = index_words(s, c, words);
+	res = malloc((n_word + 1) * sizeof(char *));
+	if (res == NULL)
 		return (NULL);
-	while (s[d.i])
+	i_word = 0;
+	while (i_word < n_word)
 	{
-		if (s[d.i] == c)
-			d.new_word = 1;
-		else if (d.new_word && s[d.i] != c)
-		{
-			d.new_word = 0;
-			d.res[++d.word_count] = ft_strjoin_free(ft_strdup(""), s[d.i]);
-		}
-		else
-			d.res[d.word_count] = ft_strjoin_free(d.res[d.word_count], s[d.i]);
-		if (d.word_count > d.n_word && d.res[d.word_count] == NULL)
-			return (NULL);
-		d.i++;
+		res[i_word] = ft_substr(s, words[i_word].pos, words[i_word].len);
+		if (res[i_word] == NULL)
+			return (free_all(&res));
+		i_word++;
 	}
-	return (d.res);
+	res[i_word] = NULL;
+	return (res);
 }
