@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:52:57 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/19 11:40:40 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/19 15:00:18 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,7 @@ char	*ft_substr(char const *string, unsigned int start, size_t len)
 		return (NULL);
 	first_len = ft_strlen(string);
 	if ((unsigned int)first_len < start || len == 0)
-	{
-		res = ft_strdup("");
-		if (res == NULL)
-			return (NULL);
-		return (res);
-	}
+		return (ft_strdup(""));
 	if ((unsigned int)first_len < start + (unsigned int)len)
 		len = first_len - start;
 	res = malloc(len + 1);
@@ -43,4 +38,3 @@ char	*ft_substr(char const *string, unsigned int start, size_t len)
 	res[i] = 0;
 	return (res);
 }
-
