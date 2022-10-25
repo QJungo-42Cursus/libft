@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:22:48 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/25 16:14:08 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/25 17:05:22 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # ifndef INT_MIN
 #  define INT_MIN -2147483648
 # endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 2048
+# endif
+
+char	*get_next_line(int fd);
 
 typedef struct s_list {
 	void			*content;

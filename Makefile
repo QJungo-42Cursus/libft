@@ -61,7 +61,8 @@ SRCS_BONUS =	ft_lstnew.c \
 				ft_printf/conversions/pointer.c \
 				ft_printf/writer/writer.c \
 				ft_printf/utils/free_join.c \
-				ft_printf/utils/index_words.c
+				ft_printf/utils/index_words.c \
+				get_next_line/get_next_line.c
 
 OBJS =			$(SRCS:.c=.o)
 OBJS_BONUS =	$(SRCS_BONUS:.c=.o)
