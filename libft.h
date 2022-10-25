@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:22:48 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/18 09:16:24 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/25 16:14:08 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ char	*itoa_base(unsigned long long int n, char *base, unsigned int n_base);
 int		strlen_until(const char *string, const char *charset);
 char	*char_to_str(char c);
 int		is_in_charset(char c, const char *charset);
+
+//	Printf !!
+int	ft_printf(const char *string, ...);
 #endif
 
 // void	color(int color, int font);

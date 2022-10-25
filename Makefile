@@ -1,6 +1,8 @@
 CC =		gcc
 CFLAGS =	-Wall -Wextra -Werror
 RM =		 rm -f
+
+
 SRCS =			ft_split.c \
 				ft_calloc.c \
 				ft_itoa.c \
@@ -52,6 +54,14 @@ SRCS_BONUS =	ft_lstnew.c \
 				itoa_base_bonus.c \
 				utoa_bonus.c \
 				strrev_bonus.c \
+				ft_printf/ft_printf.c \
+				ft_printf/conversions/conversions.c \
+				ft_printf/conversions/character.c \
+				ft_printf/conversions/hexa.c \
+				ft_printf/conversions/pointer.c \
+				ft_printf/writer/writer.c \
+				ft_printf/utils/free_join.c \
+				ft_printf/utils/index_words.c
 
 OBJS =			$(SRCS:.c=.o)
 OBJS_BONUS =	$(SRCS_BONUS:.c=.o)
@@ -78,9 +88,9 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-# testc:
-# 	${RM} test
+testc:
+	${RM} test
 
-# test: ${NAME} testc
-# 	${CC} ${CFLAGS} main.c -L. -lft -o test
-# 	./test
+test: ${NAME} testc
+	${CC} ${CFLAGS} main.c -L. -lft -o test
+	./test
