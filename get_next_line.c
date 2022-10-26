@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo.student@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:44:07 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/25 17:06:01 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/26 10:47:37 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ static int	read_line(int fd, char **cache, int count)
 	while (count)
 	{
 		count = read(fd, buf, BUFFER_SIZE);
-		if (count == -1)
-			return (-1);
-		if (count == 0)
-			return (0);
+		if (count == -1 || count == 0)
+			return (count);
 		buf[count] = '\0';
 		if (*cache == NULL)
 			*cache = ft_strdup(buf);
