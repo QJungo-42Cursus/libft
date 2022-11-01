@@ -6,11 +6,11 @@
 /*   By: qjungo <qjungo.student@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:44:07 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/26 10:47:37 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/10/27 10:13:12 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	read_line(int fd, char **cache, int count)
 {
