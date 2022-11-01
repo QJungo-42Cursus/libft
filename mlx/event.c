@@ -6,18 +6,13 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:13 by qjungo            #+#    #+#             */
-/*   Updated: 2022/10/26 14:07:33 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/01 15:12:40 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../read_map/read_map.h"
-#include "../display/display.h"
-#include "../minilibx_macos/mlx.h"
-
-/// 
-/// All event called by the event handler function
-///
-
+#include "./mlx.h"
+#include "ft_mlx.h"
+#include <stdlib.h>
 
 /// Close window and quit programme
 /// This must be called after freeing ??? TODO

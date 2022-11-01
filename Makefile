@@ -76,7 +76,14 @@ SRCS_MATH = 	geometrie/line.c \
 				vec/new.c \
 				vec/copy.c \
 				vec/conversions.c \
-				vec/assert.c
+				vec/assert.c \
+				new_.c
+
+SRCS_MLX = 		line.c \
+				event.c \
+				line.c \
+				draw_line.c \
+				pixel_to_image.c
 
 SRCS = 			$(addprefix char/,	$(SRCS_CHAR)) \
 				$(addprefix str/,	$(SRCS_STR)) \
@@ -85,6 +92,7 @@ SRCS = 			$(addprefix char/,	$(SRCS_CHAR)) \
 				$(addprefix nb/,	$(SRCS_NB)) \
 				$(addprefix prt/,	$(SRCS_PRT)) \
 				$(addprefix math/,	$(SRCS_MATH)) \
+				$(addprefix mlx/,	$(SRCS_MLX)) \
 				get_next_line.c
 
 OBJS =			$(SRCS:.c=.o)

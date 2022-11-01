@@ -6,14 +6,13 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 13:42:35 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/01 15:09:40 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DISPLAY_H
 # define DISPLAY_H
-
-# include "../libft.h"
+# include "../math/ft_math.h"
 
 /// MLX
 

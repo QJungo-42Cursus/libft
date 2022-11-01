@@ -6,12 +6,11 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:27:36 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 13:43:43 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/01 14:51:10 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../libft.h"
+#include "ft_mlx.h"
 
 t_line	new_line(t_vec2 a, t_vec2 b, int color, int thickness)
 {

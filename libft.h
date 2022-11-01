@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 21:22:48 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 14:46:47 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/01 15:06:47 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include "nb/nb.h"
 # include "mem/mem.h"
 # include "str/str.h"
+# include "mlx/ft_mlx.h"
 
 # ifndef INT_MIN
 #  define INT_MIN -2147483648

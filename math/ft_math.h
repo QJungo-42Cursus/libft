@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:23:49 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 14:36:07 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/01 14:56:42 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "vec/vec.h"
 # include "matrix/matrix.h"
+# include "geometrie/geometrie.h"
 
 typedef struct s_droite{
 	float	m;
@@ -24,7 +25,7 @@ typedef struct s_droite{
 	float	y;
 	// n'est pas mathematiquement vraiment a sa place ici mais bon...
 	// (c'est la vitesse a laquelle j'avance)
-	// float	move_factor;
+	float	move_factor;
 }	t_droite;
 
 
