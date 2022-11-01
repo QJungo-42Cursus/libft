@@ -67,29 +67,38 @@ SRCS_MEM =		ft_calloc.c \
 				ft_memset.c \
 				ft_memmove.c
 
+SRCS_MATH = 	geometrie/line.c \
+				geometrie/translation.c \
+				geometrie/map_op.c \
+				matrix/operations.c \
+				matrix/conversions.c \
+				matrix/new.c \
+				vec/new.c \
+				vec/copy.c \
+				vec/conversions.c \
+				vec/assert.c
+
 SRCS = 			$(addprefix char/,	$(SRCS_CHAR)) \
 				$(addprefix str/,	$(SRCS_STR)) \
 				$(addprefix lst/,	$(SRCS_LST)) \
 				$(addprefix mem/,	$(SRCS_MEM)) \
 				$(addprefix nb/,	$(SRCS_NB)) \
 				$(addprefix prt/,	$(SRCS_PRT)) \
+				$(addprefix math/,	$(SRCS_MATH)) \
 				get_next_line.c
 
 OBJS =			$(SRCS:.c=.o)
 
-#.c.o:
-#	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
-
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
