@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assert.c                                           :+:      :+:    :+:   */
+/*   conversions.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 12:35:34 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/02 10:14:31 by qjungo           ###   ########.fr       */
+/*   Created: 2022/11/02 10:21:08 by qjungo            #+#    #+#             */
+/*   Updated: 2022/11/02 10:24:10 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-#include "vec.h"
 
-int	assert_rounded_vec2(t_vec2 a, t_vec2 b)
+float	deg_to_rad(float deg)
 {
-	return ((round(a.x) == round(b.x)) && (round(a.y) == round(b.y)));
+	return (deg * M_PI / 180);
+}
+
+float	rad_to_deg(float rad)
+{
+	return (rad * 180 / M_PI);
 }

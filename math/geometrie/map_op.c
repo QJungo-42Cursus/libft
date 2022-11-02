@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:17:02 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 22:20:23 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/02 10:23:35 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,13 @@
 #include "../vec/vec.h"
 #include "../ft_math.h"
 
-float  deg_to_rad(float deg)
-{
-	return (deg * M_PI / 180);
-}
-
-float  rad_to_deg(float rad)
-{
-	return (rad * 180 / M_PI);
-}
-
-
-t_vec3 rotation_x(t_vec3 point, float angle)
+//		TODO : juste le calcul (sans la matrice)
+/*
+t_vec3	rotation_x(t_vec3 point, float angle)
 {
 	t_matrix	rotation_matrix;
 	t_matrix	n_point;
 	t_vec3		res;
-
-	t_vec3	b;
-
-	b.x = point.x;
-
-	b.y = point.y * cos(angle) + point.z * sin(angle);
-	b.z = (-point.y) * sin(angle) + point.z * cos(angle);
-
-	(void)b;
-
 	angle = deg_to_rad(angle);
 	rotation_matrix = init_matrix(3, 3);
 	rotation_matrix.self[0][0] = 1;
@@ -56,6 +37,17 @@ t_vec3 rotation_x(t_vec3 point, float angle)
 	free_matrix(n_point);
 	free_matrix(rotation_matrix);
 	return (res);
+}
+*/
+
+t_vec3	rotation_x(t_vec3 point, float angle)
+{
+	t_vec3		b;
+
+	b.x = point.x;
+	b.y = point.y * cos(angle) + point.z * sin(angle);
+	b.z = (-point.y) * sin(angle) + point.z * cos(angle);
+	return (b);
 }
 
 t_vec3	rotation_z(t_vec3 a, float angle)
