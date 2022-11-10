@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:40:53 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/09 11:06:05 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/10 15:19:48 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ static void	move(t_vec2 *moving_pixel,
 	}
 }
 
+// TODO add gradient
 static void	loop(t_line line, t_img_data *img, t_vec2 dist, float speed)
 {
 	float	cursor;
 	float	color_speed;
 
 	color_speed = ft_fabs(ft_fabs(line.color.start) - ft_fabs(line.color.end));
+	(void)color_speed;
 	cursor = 0;
 	while (1)
 	{
@@ -92,7 +94,6 @@ static void	straight_loop(t_vec2 moving_pixel, t_line line, t_img_data *img)
 
 void	draw_line(t_img_data *img, t_line line)
 {
-	t_vec2		moving_pixel;
 	t_droite	droite;
 	float		speed;
 	t_vec2		dist;
@@ -104,7 +105,6 @@ void	draw_line(t_img_data *img, t_line line)
 	droite.b = ordonnate_to_origin(line.a.x, line.a.y, droite.m);
 	offset(new_vec2(img->size.x, img->size.y), &line.a, droite);
 	offset(new_vec2(img->size.x, img->size.y), &line.b, droite);
-	moving_pixel = new_vec2(line.a.x, line.a.y);
 	dist = new_vec2(ft_fabs(ft_fabs(line.a.x) - ft_fabs(line.b.x)),
 			ft_fabs(ft_fabs(line.a.y) - ft_fabs(line.b.y)));
 	speed = dist.y / dist.x;
