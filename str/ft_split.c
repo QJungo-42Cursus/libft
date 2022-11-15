@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:52:33 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/01 13:03:08 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/14 20:24:56 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ typedef struct s_word {
 	int	len;
 }	t_word;
 
-void	*free_all(char ***res)
+static void	*free_all(char ***res)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ void	*free_all(char ***res)
 	return (NULL);
 }
 
-int	index_words(char const *s, char c, t_word *words)
+static int	index_words(char const *s, char c, t_word *words)
 {
 	int	i_char;
 	int	i_word;
