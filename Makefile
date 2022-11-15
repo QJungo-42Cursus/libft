@@ -19,6 +19,7 @@ SRCS_STR =		ft_strmapi.c \
 				ft_toupper.c \
 				ft_tolower.c \
 				ft_split.c \
+				ft_split_pad.c \
 				char_to_str.c \
 				strlen_until.c \
 				strrev.c
@@ -67,7 +68,8 @@ SRCS_MEM =		ft_calloc.c \
 				ft_memcmp.c \
 				ft_memchr.c \
 				ft_memset.c \
-				ft_memmove.c
+				ft_memmove.c \
+				split_free.c
 
 SRCS_MATH = 	geometrie/line.c \
 				geometrie/translation.c \
@@ -126,8 +128,8 @@ SAN =	-fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all \
 		-fno-sanitize=null -fno-sanitize=alignment
 
 # TODO : garder ca tout le temps ?? (pour le san)
-%.o: %.c
-		@$(CC) -I. -o $@ -c $? $(SAN) $(CFLAGS)
+#%.o: %.c
+#		@$(CC) -I. -o $@ -c $? $(SAN) $(CFLAGS)
 
 test: $(OBJS) $(OBJS_T)
 	ar -rcs $(NAME) $(OBJS)
