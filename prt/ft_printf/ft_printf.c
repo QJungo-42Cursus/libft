@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:26:53 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/22 17:08:34 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:21:07 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*all_in_string(int final_len, t_list **words)
 	char	*res;
 	int		count;
 	int		total;
-	t_list	list;
+	t_list	*list;
 
 	list = *words;
 	res = malloc(sizeof(char) * (final_len + 1));
