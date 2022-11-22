@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 08:46:40 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/11 09:36:11 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/22 14:48:07 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ typedef enum e_print_type {
 	POINTER,
 	CHAR,
 	STRING,
-
-	/// TODO not supported
 	FLOAT,
-
-	/// flags?
 	LONG,
 	SHORT,
 }	t_print_type;
+
 typedef enum e_word_type {
 	WORD,
 	FLAG,
@@ -36,7 +33,7 @@ typedef struct s_word {
 	int			start;
 	int			len;
 	t_word_type	type;
-	char		*string; // TODO est le string final...
+	char		*string;
 	char		flag[7];
 }	t_word;
 

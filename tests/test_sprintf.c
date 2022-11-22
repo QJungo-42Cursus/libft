@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_sprintf.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/22 14:44:13 by qjungo            #+#    #+#             */
+/*   Updated: 2022/11/22 14:44:15 by qjungo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 #include "tests.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-void	test_sprintf()
+void	test_sprintf(void)
 {
-	long	l = INT_MAX;
-	l++;
-
+	long	l;
 	char	*test;
+
+	l = (long)INT_MAX + 1;
 	test = NULL;
 	test = ft_sprintf("sans flag");
 	printf("%s\n", test);
@@ -29,13 +41,4 @@ void	test_sprintf()
 	test = ft_sprintf("%% %%", "'salut !'");
 	printf("%s\n", test);
 	free(test);
-
-	// TODO le float coupe tout ce qu'il a apres le %f...
-	//test = ft_sprintf("FLOAT : %f yaa \n", 10.1f);
-	//printf("%s\n", test);
-	// TODO ne fonctionne tout simplement pas...
-	//test = ft_sprintf("LONG: %ld\n", l);
-	//printf("%s\n", test);
-
-
 }

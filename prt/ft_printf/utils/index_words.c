@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 10:44:04 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/11 09:27:12 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/22 14:47:20 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ static void	set_word(
 
 int	index_w(const char *string, t_list **words)
 {
-	int	i_char;
-	int	i_word;
+	int		i_char;
+	int		i_word;
 	t_word	*new_word;
 
 	i_char = 0;

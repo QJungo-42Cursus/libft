@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:26:53 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/11 10:12:25 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:08:34 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,29 @@ int	ft_printf(const char *string, ...)
 	return (n_char);
 }
 
-static char	*all_in_string(int final_len, t_list *list)
+//
+// 
+// ############# SPRINTF ###############
+//
+//
+static char	*all_in_string(int final_len, t_list **words)
 {
 	char	*res;
 	int		count;
 	int		total;
+	t_list	list;
 
+	list = *words;
 	res = malloc(sizeof(char) * (final_len + 1));
 	if (res == NULL)
-	{
-		// TODO
-	}
+		return (NULL);
 	count = 0;
 	total = 0;
 	while (list != NULL)
 	{
 		count = ft_strlen((const char *)((t_word *)list->content)->string);
-		ft_strlcpy(&res[total], (const char *)((t_word *)list->content)->string, count + 1);
+		ft_strlcpy(&res[total],
+			(const char *)((t_word *)list->content)->string, count + 1);
 		total += count;
 		free((char *)((t_word *)list->content)->string);
 		list = list->next;
@@ -76,7 +82,7 @@ char	*ft_sprintf(const char *string, ...)
 		return (0);
 	va_start(args, string);
 	n_char = swriter(words, args, string);
-	res = all_in_string(n_char, words);
+	res = all_in_string(n_char, &words);
 	ft_lstclear(&words, free);
 	va_end(args);
 	return (res);

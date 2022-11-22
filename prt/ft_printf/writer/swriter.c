@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 08:40:45 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/11 10:19:47 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/11/22 14:47:03 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	flag(t_word *word, int *i_char, va_list args)
 	word->string = conversions(word->flag, args);
 	if (word->string == NULL)
 		return ;
-	// TODO if (word->flag[0] == 'c' && ft_strlen(word->flag) == 0)
 	if (word->flag[0] == 'c' && ft_strlen(word->string) == 0)
 	{
 		(*i_char)++;
