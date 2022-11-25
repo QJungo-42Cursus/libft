@@ -35,6 +35,7 @@ SRCS_CHAR = 	ft_isalnum.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
+				ft_isspace.c \
 				is_in_charset.c
 
 SRCS_LST = 		ft_lstnew.c \
