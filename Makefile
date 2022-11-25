@@ -53,7 +53,7 @@ SRCS_PRT = 		ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				ft_color.c
+				ft_color.c \
 				ft_printf/ft_printf.c \
 				ft_printf/conversions/conversions.c \
 				ft_printf/conversions/character.c \
