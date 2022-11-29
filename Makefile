@@ -104,8 +104,10 @@ SRCS = 			$(addprefix char/,	$(SRCS_CHAR)) \
 				$(addprefix mlx/,	$(SRCS_MLX)) \
 				get_next_line.c
 
+# TODO mettre le test_utils ailleurs pour y avoir acces plus facilement ?
 SRCS_T =		test_printf.c \
 				test_sprintf.c \
+				test_utils.c \
 				main.c
 
 SRCS_TEST =		$(addprefix tests/,	$(SRCS_T))
