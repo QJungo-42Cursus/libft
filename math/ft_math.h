@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:23:49 by qjungo            #+#    #+#             */
-/*   Updated: 2022/11/09 09:55:38 by qjungo           ###   ########.fr       */
+/*   Updated: 2022/12/02 10:41:01 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ typedef struct s_edge {
 t_edge		new_edge(int a, int b);
 
 float		ft_fabs(float n);
+int			ft_pow(int n, int p);
 
 #endif /* FT_MATH_H */
