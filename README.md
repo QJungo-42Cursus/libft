@@ -17,3 +17,4 @@ During the Cursus, we are allowed to add more and more useful function to it.
 I added those:
 - math functions
 - mlx (the 42 official graphic library) helpers
+- printf and get_next_line (two other 42 projects)
