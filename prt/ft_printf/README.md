@@ -1,17 +1,16 @@
 # ft_printf
-**easier than the ft_putchar**
+**easier than ft_putchar..**
 <br>
 <br>
-A easy re-implementations of the well known printf stdio function
+An easy re-implementations of the well known printf C stdio function
 <br>
 We find thinks like :
-- parsing `printf("show this value : %s")`
 - base conversion 
 - string manipulation
+- parsing `printf("show this value : %s", value)`
 
 There is two main approach : 
 1. Printing each time we find a new `%` and the variable it points to
-2. Do all the parsing in one, convert, keep and print once everything is in converted in one string
+2. Do all the parsing, convert every variable and print once everything is converted in one string
 
 I went with the second approach witch allow me later to re-implement `sprintf` (return the formatted string instead of printing it)
-which is a really helpful function.
