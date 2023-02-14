@@ -1,5 +1,5 @@
 # ft_printf
-**easier than the rest**
+**easier than the ft_putchar**
 <br>
 <br>
 A easy re-implementations of the well known printf stdio function
