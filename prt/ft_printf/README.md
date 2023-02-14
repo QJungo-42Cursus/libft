@@ -13,4 +13,4 @@ There is two main approach :
 1. Printing each time we find a new `%` and the variable it points to
 2. Do all the parsing, convert every variable and print once everything is converted in one string
 
-I went with the second approach witch allow me later to re-implement `sprintf` (return the formatted string instead of printing it)
+I went with the second approach wich allow me later to re-implement `sprintf` (return the formatted string instead of printing it)
