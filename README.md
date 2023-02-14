@@ -2,7 +2,7 @@
 **First 42 Cursus project.**
 <br>
 <br>
-It consists, for the most, of re-implementations of basis C libraries function.
+It consists, for the most, of re-implementations of basics C libraries functions.
 <br>
 We find thinks like :
 - string and character manipulation
