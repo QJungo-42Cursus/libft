@@ -6,32 +6,33 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:06:46 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 13:12:35 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:25:09 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mlx.h"
 
-unsigned int	color_from_rgb(char r, char g, char b)
+unsigned int	color_from_rgb(unsigned char r,
+					unsigned char g, unsigned char b)
 {
-	t_rgb		color;
-	char		*ptr;
+	t_rgb				color;
+	unsigned char		*ptr;
 
-	ptr = (char *)&color;
-	// TODO tests !
-	ptr[0] = r;
+	color = 0xFF000000;
+	ptr = (unsigned char *)&color;
+	ptr[2] = r;
 	ptr[1] = g;
-	ptr[2] = b;
+	ptr[0] = b;
 	return (color);
 }
 
-void	color_to_rgb(char *r, char *g, char *b)
+void	color_to_rgb(t_rgb color,
+			unsigned char *r, unsigned char *g, unsigned char *b)
 {
-	t_rgb		color;
-	char		*ptr;
+	unsigned char		*ptr;
 
-	ptr = (char *)&color;
-	*r = ptr[0];
+	ptr = (unsigned char *)&color;
+	*r = ptr[2];
 	*g = ptr[1];
-	*b = ptr[2];
+	*b = ptr[0];
 }

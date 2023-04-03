@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 13:11:35 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:25:24 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ int				pixel_index(int x, int y, t_img_data img_data);
 // texture.c
 t_texture		new_text(void *mlx, char *text_path);
 // pixel.c
-void			color_to_rgb(char *r, char *g, char *b);
-unsigned int	color_from_rgb(char r, char g, char b);
+unsigned int	color_from_rgb(unsigned char r,
+					unsigned char g, unsigned char b);
+void			color_to_rgb(t_rgb color,
+					unsigned char *r, unsigned char *g, unsigned char *b);
 
 /// EVENT HANDLING
 
