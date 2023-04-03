@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 22:59:09 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/03 22:59:34 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_texture {
 	unsigned int	*pixels;
 }	t_texture;
 
-/// PROTOTYPES
+/// PROTOTYPE
 
 void			draw_line(t_line line, t_img_data *img_data);
 void			pixel_to_image(t_img_data *img, t_vec2 point, int color);
