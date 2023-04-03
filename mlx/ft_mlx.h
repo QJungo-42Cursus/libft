@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 12:53:58 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:11:35 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_texture {
 	unsigned int	*pixels;
 }	t_texture;
 
+typedef unsigned int	t_rgb;
+
 /// PROTOTYPES
 
 void			draw_line(t_img_data *img, t_line line);
@@ -65,6 +67,9 @@ unsigned int	*pixel_addr(int x, int y, t_img_data img_data);
 int				pixel_index(int x, int y, t_img_data img_data);
 // texture.c
 t_texture		new_text(void *mlx, char *text_path);
+// pixel.c
+void			color_to_rgb(char *r, char *g, char *b);
+unsigned int	color_from_rgb(char r, char g, char b);
 
 /// EVENT HANDLING
 
