@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 12:03:38 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/03 12:53:58 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int				check_max(float x, float y, t_img_data img);
 // image.c
 t_img_data		new_img_data(void *mlx, t_vec2i size);
 t_img_data		img_data_from(void *img);
-t_img_data		img_data_from(void *img);
-t_img_data		new_img_data(void *mlx, t_vec2i size);
+unsigned int	*pixel_addr(int x, int y, t_img_data img_data);
+int				pixel_index(int x, int y, t_img_data img_data);
 // texture.c
 t_texture		new_text(void *mlx, char *text_path);
 
