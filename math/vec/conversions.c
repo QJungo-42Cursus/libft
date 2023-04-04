@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:35:34 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/04 22:16:46 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/04 22:19:34 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ t_vec2	angle_to_vec2(double angle)
 	n.x = cos(angle);
 	n.y = sin(angle);
 	return (n);
+}
+
+double	vec2_to_angle(t_vec2 v)
+{
+	return (atan2(v.y, v.x));
 }

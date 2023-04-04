@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:53:48 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/04 22:17:02 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/04 22:19:42 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_vec3		new_vec3(float x, float y, float z);
 t_vec2		vec3_to2(t_vec3 v);
 t_vec3		vec2_to3(t_vec2 v);
 t_vec2		angle_to_vec2(double angle);
+double		vec2_to_angle(t_vec2 v);
 
 //			copy
 t_vec3		*copy_vec3_list(t_vec3 *src, int size);
