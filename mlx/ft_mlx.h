@@ -6,7 +6,7 @@
 /*   By: qjungo <qjungo@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:35:26 by qjungo            #+#    #+#             */
-/*   Updated: 2023/04/03 22:59:34 by qjungo           ###   ########.fr       */
+/*   Updated: 2023/04/04 09:52:06 by qjungo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ typedef struct s_line {
 	t_rgb				color;
 }	t_line;
 
+typedef struct s_rect {
+	t_vec2				position;
+	t_vec2				size;
+	t_rgb				color;
+}	t_rect;
+
 typedef struct s_texture {
 	t_vec2i			size;
 	unsigned int	*pixels;
@@ -66,6 +72,9 @@ unsigned int	color_from_rgb(unsigned char r,
 					unsigned char g, unsigned char b);
 void			color_to_rgb(t_rgb color,
 					unsigned char *r, unsigned char *g, unsigned char *b);
+// rect
+void			draw_rect(t_rect rect, t_img_data *img_data);
+t_rect			new_rect(t_vec2 position, t_vec2 size, int color);
 
 /// EVENT HANDLING
 
